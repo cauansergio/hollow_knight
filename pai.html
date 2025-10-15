@@ -1,0 +1,158 @@
+<!DOCTYPE html><html lang="pt-br">
+<head>
+    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ultron System Interface</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #0a3d63;
+      background-image: url('imagens/fundo.png');
+      background-size: cover; /* A imagem cobre toda a tela */
+      background-position: center center; /* A imagem fica centralizada */
+      background-attachment: fixed; /* A imagem fica fixa ao rolar */
+     background-repeat: no-repeat; /* Impede a repetição da imagem */
+      font-family: 'Courier New', monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }h1 {
+  text-shadow: 0 0 10px #0a3d63;
+  letter-spacing: 3px;
+  margin-bottom: 40px;
+  animation: fadeInDown 1s ease forwards;
+}
+
+.hud-bg {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(48, 58, 148, 0.15), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  width: 80%;
+  max-width: 800px;
+  z-index: 1;
+}
+
+.card {
+  background-color: #0a0f0a;
+  border: 1px solid #144381;
+  box-shadow: 0 0 20px #0a3d63;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.console {
+  background-color: #0a0f0a;
+  border: 1px solid #1b4f73;
+  box-shadow: 0 0 25px #1b4f73;
+  margin-top: 50px;
+  width: 80%;
+  max-width: 500px;
+  padding: 20px;
+  text-align: center;
+}
+
+input {
+  width: 90%;
+  padding: 10px;
+  background-color: #000;
+  color: #1b4f73;
+  border: 1px solid #1b55d3;
+  outline: none;
+  margin-bottom: 10px;
+  font-family: inherit;
+}
+
+input::placeholder {
+  color: #103b8b;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #1b4f73;
+  border: none;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #1b4f73;
+}
+
+@keyframes fadeInDown {
+  from {opacity: 0; transform: translateY(-50px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes pulseBar {
+  0%, 100% {opacity: 0.2;}
+  50% {opacity: 1;}
+}
+
+.bar {
+  height: 5px;
+  width: 50px;
+  background-color: #506dbdee;
+  margin: 0 auto;
+  border-radius: 5px;
+  animation: pulseBar 1s infinite;
+}
+
+  </style>
+</head>
+<body>
+  <div class="hud-bg"></div>
+  <h1>MATERIAIS CATALITICOS PARA GERAÇÃO DE ENERGIA</h1>  <div class="grid">
+    <div class="card">
+      <div class="card-icon">📁</div>
+      <p>Artigos</p>
+      <div class="bar"></div>
+    </div>
+    <div class="card">
+      <div class="card-icon">📶</div>
+      <p>Ni foam</p>
+      <div class="bar"></div>
+    </div>
+    <div class="card">
+      <div class="card-icon">⚙️</div>
+      <p>NiFe</p>
+      <div class="bar"></div>
+    </div>
+    <div class="card">
+      <div class="card-icon">⚛️</div>
+      <p>NiCo</p>
+      <div class="bar"></div>
+    </div>
+  </div>  <div class="console">
+    <p style="opacity:0.8; font-size:12px;">ESCANEAR COM A CAMERA</p>
+  <!-- <input type="text" placeholder=">_ INITIATE SEQUENCE..." />#-->
+    <button>BUSCAR</button>
+  </div>
+</body>
+</html>
